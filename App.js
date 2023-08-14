@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import {SafeAreaView, StyleSheet, Platform } from "react-native";
+
+import { Registration } from "./src/screens"
+import Flex from './src/screens/flex';
+
+const barStyle = Platform.OS === "ios" ? "dark-content" : "light-content";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+    //   <Text>Welcome on Anisa App</Text>
+    //   <StatusBar style="auto" />
+    // </View>
+
+     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={barStyle}/>
+      <Flex/>
+     </SafeAreaView>
   );
 }
 
